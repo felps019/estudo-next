@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getCursos } from "./api/cursos";
 
+// export const dynamic = "force-dynamic"; //força que essa página seja dinamica
+
 export default async function CursosPage() {
 	const cursos = await getCursos();
 	return (
