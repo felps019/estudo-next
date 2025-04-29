@@ -9,7 +9,6 @@ type PageParams = {
 };
 
 export default async function CursosPage({ params }: PageParams) {
-	console.log(params);
 	return (
 		<main>
 			<h1>Cursos</h1>
