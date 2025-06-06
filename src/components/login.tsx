@@ -1,5 +1,7 @@
 "use client";
 
+import { login } from "@/actions/login";
+
 // import { cookies } from "next/headers";
 
 // export async function GET() {
@@ -19,14 +21,8 @@ export function Login() {
 		event.preventDefault();
 		const username = event.currentTarget.username.value;
 		const password = event.currentTarget.password.value;
-		const response = await fetch("api/login", {
-			method: "POST",
-			headers: {
-				"Context-Type": "application/json",
-			},
-			body: JSON.stringify({ username, password }),
-		});
-		if (response.ok) window.location.href = "/";
+		const response = await login(username, password);
+		console.log(response);
 	}
 
 	return (
